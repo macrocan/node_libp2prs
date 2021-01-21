@@ -1,0 +1,19 @@
+[package]
+name = "node_libp2prs"
+version = "0.1.0"
+authors = ["zhongxh <zhong_xiaohong@yeah.net>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+async-std = ["libp2p-rs/routed-async-std", "libp2p-rs/secio", "libp2p-rs/yamux"]
+tokio = ["libp2p-rs/routed-tokio", "libp2p-rs/secio", "libp2p-rs/yamux"]
+
+[dependencies]
+async-trait = "0.1"
+lazy_static = "1.4"
+log = "0.4"
+env_logger = "0.8.2"
+libp2p-rs = { git = "https://github.com/kingwel-xie/libp2p-rs.git", branch = "master", version = "0.2.0", optional = true }
+xcli = { git = "https://github.com/kingwel-xie/xcli-rs.git", branch = "master" }
